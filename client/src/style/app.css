@@ -1,0 +1,10 @@
+*{
+	color: #4a4a4a;
+}
+
+
+.m-view{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}

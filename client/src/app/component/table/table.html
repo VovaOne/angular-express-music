@@ -1,0 +1,12 @@
+<div class="m-table">
+    <m-table-header columns="tableController.columns"
+                    order-column="tableController.orderColumn"
+                    order-direction-reverse="tableController.orderDirectionReverse"></m-table-header>
+    <m-table-body columns="tableController.columns"
+                  data="tableController.data"
+                  order-column="tableController.orderColumn"
+                  order-direction-reverse="tableController.orderDirectionReverse"></m-table-body>
+    <m-table-footer items="tableController.items"
+                    on-item-on-page-change="tableController.onItemOnPageChange"
+                    on-page-change="tableController.onPageChange"></m-table-footer>
+</div>

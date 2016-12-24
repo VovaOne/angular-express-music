@@ -1,0 +1,66 @@
+.m-table-footer {
+    height: 45px;
+    width: auto;
+    border-top: 1px solid #dddddd;
+}
+
+.m-table-footer-menu-items-wrapper {
+    height: 100%;
+}
+
+.m-table-footer-menu-item-150 {
+    width: 150px;
+}
+
+.m-table-footer-items-on-page {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-table-footer-items-on-page-button {
+    width: auto;
+    height: 20px;
+    padding: 5px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 1px solid #dddddd;
+}
+
+.m-table-footer-items-on-page-button:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.m-table-footer-page-numbers {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-table-footer-page-numbers-button {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.m-table-footer-page-numbers-button:hover {
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid #cbcbcb;
+}
+
+.m-table-footer-selected-page {
+    border-radius: 25px;
+    border: 1px solid #dddddd;
+}
+
+.m-table-footer-selected-items-on-page {
+    background: #cbcbcb;
+}

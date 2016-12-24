@@ -1,0 +1,18 @@
+<div>
+    <table>
+        <tr>
+            <th class="m-combobox-label">{{comboboxController.label}}</th>
+        </tr>
+        <tr>
+            <th>
+                <select ng-model="comboboxController._model"
+                        ng-change="comboboxController._onChange()"
+                        class="m-combobox-select">
+                    <option ng-repeat="option in comboboxController.data"
+                            value="{{option}}">{{option.name}}
+                    </option>
+                </select>
+            </th>
+        </tr>
+    </table>
+</div>

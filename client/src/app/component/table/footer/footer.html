@@ -1,0 +1,24 @@
+<div class="m-table-footer">
+    <table class="m-table-footer-menu-items-wrapper">
+        <tr>
+            <th>
+                <div class="m-table-footer-page-numbers">
+                    <div ng-repeat="number in footerController.displayPages"
+                         class="m-table-footer-page-numbers-button"
+                         ng-click="footerController._onPageChange(number)"
+                         ng-class="footerController.pageNumber==number && 'm-table-footer-selected-page'">{{number}}
+                    </div>
+                </div>
+            </th>
+            <th class="m-table-footer-menu-item-150">
+                <div class="m-table-footer-items-on-page">
+                    <div ng-repeat="number in [10,25,50,100]"
+                         class="m-table-footer-items-on-page-button"
+                         ng-click="footerController._onItemOnPageChange(number)"
+                         ng-class="footerController.itemsOnPage==number && 'm-table-footer-selected-items-on-page'">{{number}}
+                    </div>
+                </div>
+            </th>
+        </tr>
+    </table>
+</div>

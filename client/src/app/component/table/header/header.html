@@ -1,0 +1,24 @@
+<div class="m-table-header">
+    <table>
+        <thead>
+        <tr>
+            <th ng-repeat="(i, column) in headerController.columns"
+                ng-click="headerController.sort(column.data)"
+                ng-class="headerController.getLastCellWinOSClass(i)"
+                class="m-table-cell m-table-header-cell">
+                <table>
+                    <tr>
+                        <th>{{column.title}}</th>
+                        <th ng-show="headerController.orderColumn==column.data&&headerController.orderDirectionReverse"
+                            class="m-table-header-sort">▲
+                        </th>
+                        <th ng-show="headerController.orderColumn==column.data&&!headerController.orderDirectionReverse"
+                            class="m-table-header-sort">▼
+                        </th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+        </thead>
+    </table>
+</div>

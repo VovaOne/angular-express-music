@@ -1,0 +1,16 @@
+.m-table-header {
+
+}
+
+.m-table-header-sort {
+    width: 20px;
+}
+
+.m-table-header-cell {
+    background: #fbfbfb;
+}
+
+.m-table-header-last-cell-width-win-os {
+    width: 215px !important;
+}
+

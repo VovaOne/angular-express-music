@@ -1,0 +1,11 @@
+<div class="m-table-body">
+    <table>
+        <tbody>
+        <tr ng-repeat="row in bodyController.data | orderBy:bodyController.orderColumn:bodyController.orderDirectionReverse track by row._id">
+            <td ng-repeat="column in bodyController.columns"
+                class="m-table-cell">{{row[column.data]}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
