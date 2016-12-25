@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import './module'
 
-import './view/index'
+import './view/music-view-directive'
 
 import '../style/app.css';
 

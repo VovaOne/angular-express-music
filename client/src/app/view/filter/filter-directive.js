@@ -2,7 +2,10 @@ import angular from 'angular';
 
 import  './../../module'
 
+import './filter-controller'
+import './../../component/combobox/combobox-directive'
 import './filter.css'
+
 
 angular
   .module('app')

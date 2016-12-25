@@ -15,7 +15,8 @@
                     <div ng-repeat="number in [10,25,50,100]"
                          class="m-table-footer-items-on-page-button"
                          ng-click="footerController._onItemOnPageChange(number)"
-                         ng-class="footerController.itemsOnPage==number && 'm-table-footer-selected-items-on-page'">{{number}}
+                         ng-class="footerController.itemsOnPage==number && 'm-table-footer-selected-items-on-page'">
+                        {{number}}
                     </div>
                 </div>
             </th>

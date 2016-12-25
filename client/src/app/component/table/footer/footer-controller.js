@@ -19,19 +19,23 @@ function FooterController($scope) {
   vm.displayPages = [1, 2, 3, 4, 5];
   vm.maxPages = 4;
 
-  $scope.$watch("items", function (newValue, oldValue) {
+  $scope.$watch('items', function (newValue) {
     vm.items = newValue;
+    init();
+  });
+
+  function init() {
     calculateMaxPages();
     calculateDisplayPages();
     calculateRequestParams();
-  },true);
+  }
 
   vm._onItemOnPageChange = function (number) {
     vm.itemsOnPage = number;
     calculateMaxPages();
     calculateDisplayPages();
     calculateRequestParams();
-    vm.onItemOnPageChange(vm.skip, vm.limit);
+    $scope.onItemOnPageChange(vm.skip, vm.limit);
   };
 
   vm._onPageChange = function (number) {
@@ -39,7 +43,7 @@ function FooterController($scope) {
     calculateMaxPages();
     calculateDisplayPages();
     calculateRequestParams();
-    vm.onPageChange(vm.skip, vm.limit);
+    $scope.onPageChange(vm.skip, vm.limit);
   };
 
   function calculateRequestParams() {

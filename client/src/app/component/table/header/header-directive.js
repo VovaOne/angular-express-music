@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import  './../../../module'
 
+import './header-controller'
 import './header.css'
 
 angular

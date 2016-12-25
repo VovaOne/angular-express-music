@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import  './../../module'
 
+import './combobox-controller'
 import './combobox.css'
 
 angular

@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import  './../../../module'
 
+import './footer-controller'
 import './footer.css'
 
 angular
@@ -19,6 +20,6 @@ function footerDirective() {
       onPageChange: '=',
       onItemOnPageChange: '='
     },
-    bindToController: true
+    // bindToController: true //$scope.$watch is not working
   }
 }
