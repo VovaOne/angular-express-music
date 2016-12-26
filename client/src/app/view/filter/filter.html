@@ -1,12 +1,7 @@
 <div class="m-filter-form">
-    <m-combobox label="'Исполнитель'"
-                data="filterController.singerFilterData"
-                on-change="filterController.onSingerChange"></m-combobox>
-    <m-combobox label="'Жанр'"
-                data="[{id: '1', name: 'Option A'},{id: '2', name: 'Option B'},{id: '3', name: 'Option C'}]"
-                on-change="filterController.onGenreChange"></m-combobox>
-    <m-combobox label="'Год'"
-                data="[{id: '1', name: 'Option A'},{id: '2', name: 'Option B'},{id: '3', name: 'Option C'}]"
-                on-change="filterController.onYearChange"></m-combobox>
-    <ng-transclude></ng-transclude>
+    <m-combobox ng-repeat="filter in filterController.filtersData"
+                label="filter.label"
+                field="filter.field"
+                data="filter.list"
+                on-change="filterController.onChangeFilter"></m-combobox>
 </div>

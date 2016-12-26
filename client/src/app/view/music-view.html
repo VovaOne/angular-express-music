@@ -4,5 +4,6 @@
              data="musicViewController.data"
              on-page-change="musicViewController.onPageChange"
              on-item-on-page-change="musicViewController.onItemOnPageChange"></m-table>
-    <m-filter on-change="musicViewController.onFilterChange"></m-filter>
+    <m-filter filters-data="musicViewController.filtersData"
+            on-change="musicViewController.onFilterChange"></m-filter>
 </div>

@@ -17,6 +17,7 @@ function comboboxDirective() {
     controllerAs: 'comboboxController',
     scope: {
       label: '=',
+      field: '=',
       data: '=',
       onChange: '='
     },

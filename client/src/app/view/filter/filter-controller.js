@@ -6,31 +6,20 @@ angular.module('app').controller('FilterController', FilterController);
 function FilterController() {
   var vm = this;
 
-  vm.singerFilterData = [{id: 'Jazz', name: 'Джаз'}, {id: 'Rock', name: 'Рок'}];
+  vm.filtersData = [];
 
   vm.filters = [];
 
-  vm.onSingerChange = function (value) {
-    addFilter('singer', value);
+  vm.onChangeFilter = function (picked) {
+    addFilter(picked.field, picked.value);
     vm.onChange({$and: vm.filters})
   };
 
-  vm.onGenreChange = function (value) {
-    addFilter('genre', value);
-    vm.onChange({$and: vm.filters})
-  };
-
-  vm.onYearChange = function (value) {
-    addFilter('year', value);
-    vm.onChange({$and: vm.filters})
-  };
-
-
-  function addFilter(column, value) {
+  function addFilter(field, value) {
     vm.filters = vm.filters
-      .filter(filter =>filter.name != value.id);
+      .filter(filter => Object.keys(filter)[0] != field);
     vm.filters.push({
-      [column]: value.id
+      [field]: value
     });
   }
 }

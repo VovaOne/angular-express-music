@@ -5,7 +5,8 @@ module.exports = {
   save: save,
   remove: remove,
   findAll: findAll,
-  count: count
+  count: count,
+  findDistinct: findDistinct
 };
 
 
@@ -14,10 +15,14 @@ init();
 function init() {
   mongoose.connect('mongodb://localhost/test');
 
-  getSampleData().forEach(function (m) {
-    save(new Music(m));
-  });
+  // load sample data
+  for (i = 0; i <= 5; i++) {
+    getSampleData().forEach(function (m) {
+      save(new Music(m));
+    });
+  }
 
+  //remove all
   // findAll().then(function (list) {
   //   list.data.forEach(function (model) {
   //     remove(model._id)
@@ -66,6 +71,18 @@ function findAll(filter, skip, limit) {
       .find(filter)
       .skip(skip)
       .limit(limit)
+      .exec(function (err, list) {
+        if (err) reject(err);
+        fulfill(list)
+      });
+  });
+}
+
+function findDistinct(field) {
+  return new Promise(function (fulfill, reject) {
+    Music
+      .find()
+      .distinct(field)
       .exec(function (err, list) {
         if (err) reject(err);
         fulfill(list)

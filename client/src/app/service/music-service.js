@@ -10,12 +10,19 @@ function MusicService($http) {
 
   var self = this;
 
-  this.loadMusic = function (filter, skip, limit) {
-    return $http.get('http://localhost:1337/' +
-      'localhost:3000/music' +
+  self.getMusic = function (filter, skip, limit) {
+    return $http.get('http://localhost:3000/music' +
       '?filter=' + JSON.stringify(filter) +
       '&skip=' + skip +
       '&limit=' + limit)
+      .then(response => response.data)
+      .catch(e => {
+        console.log(e);
+      });
+  };
+
+  self.getMusicFilters = function () {
+    return $http.get('http://localhost:3000/music/filters')
       .then(response => response.data)
       .catch(e => {
         console.log(e);

@@ -3,6 +3,7 @@ var app = require('./../app');
 var router = express.Router();
 
 var musicRepository = require('./../repository/music-repository');
+var musicService = require('./../service/music-service');
 
 
 router.get('/', function (req, res, next) {
@@ -22,6 +23,12 @@ router.get('/', function (req, res, next) {
     });
   });
 
+});
+
+router.get('/filters', function (req, res, next) {
+  musicService.getMusicFilters().then(function (filters) {
+    res.json(filters);
+  });
 });
 
 

@@ -8,16 +8,13 @@ function ComboboxController() {
   var vm = this;
 
   vm.label = '';
+  vm.field = '';
   vm.selected = null;
   vm._model = null;
   vm.data = [];
 
 
   vm._onChange = function () {
-    // debugger;
-    // var value1;
-    // var value = angular.copy(vm._model, value1);
-    // var obj = JSON.stringify(value);
-    vm.onChange(JSON.parse(vm._model));
+    vm.onChange({field: vm.field, value: vm._model});
   }
 }

@@ -14,11 +14,11 @@ angular
 function filterDirective() {
   return {
     restrict: 'E',
-    transclude: true,
     template: require('./filter.html'),
     controller: 'FilterController',
     controllerAs: 'filterController',
     scope: {
+      filtersData: '=',
       onChange: '='
     },
     bindToController: true

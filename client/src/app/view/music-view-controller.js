@@ -25,6 +25,7 @@ function MusicViewController(musicService) {
   }];
   vm.data = [];
   vm.filters = {};
+  vm.filtersData = [];
   vm.items = 0;
   vm.skip = null;
   vm.limit = null;
@@ -34,6 +35,7 @@ function MusicViewController(musicService) {
 
   function activate() {
     loadData();
+    loadFilters();
   }
 
 
@@ -55,9 +57,15 @@ function MusicViewController(musicService) {
   };
 
   function loadData() {
-    musicService.loadMusic(vm.filters, vm.skip, vm.limit).then(data => {
+    musicService.getMusic(vm.filters, vm.skip, vm.limit).then(data => {
       vm.data = data.list;
       vm.items = data.items;
+    });
+  }
+
+  function loadFilters() {
+    musicService.getMusicFilters().then(filters => {
+      vm.filtersData = filters;
     });
   }
 
