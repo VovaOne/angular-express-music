@@ -10,8 +10,8 @@ COPY . /usr/src/app
 # Install
 RUN cd ./client && npm install
 RUN cd ./server && npm install
-RUN cd ./client && npm build
+RUN cd ./client && npm run build
 
-WORKDIR /usr/src/app/server
+RUN chmod -R 777 /usr/src/app/bin
 
 EXPOSE 3000

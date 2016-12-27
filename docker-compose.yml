@@ -1,11 +1,15 @@
-version: '2'
-services:
-  music-app:
-    build: .
-    ports:
+ version: '2'
+ services:
+   misic-app:
+     build: 
+      context: "./"
+      dockerfile: "Dockerfile"
+     ports:
      - "80:3000"
-	depends_on:
-      - mongo
-	command: ["./wait-for-it.sh", "localhost:27017", "--", "npm", "start"]
-  mongo:
-    image: "mongo"
+     depends_on:
+     - "db"
+     command: ["sh","./bin/run.sh"]
+   db:
+     ports:
+     - "27017:27017"
+     image: "mongo"

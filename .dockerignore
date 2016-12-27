@@ -1,2 +1,12 @@
-node_modules
-npm-debug.log
+*.DS_Store
+
+idea/
+server/idea/
+client/idea/
+
+server/node_modules/
+client/node_modules/
+client/dist/
+
+
+npm-debug*

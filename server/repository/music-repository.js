@@ -1,3 +1,4 @@
+var fs = require('fs');
 var mongoose = require('mongoose');
 var Music = require('./../model/music');
 
@@ -13,7 +14,17 @@ module.exports = {
 init();
 
 function init() {
-  mongoose.connect('mongodb://localhost/test');
+
+  //connect db with app-config.json
+  fs.readFile('./../app-config.json', 'utf8', function (err, data) {
+
+    if (err) throw err;
+    var config = JSON.parse(data);
+
+    var mongoHost = config.mongoHost;
+    mongoose.connect('mongodb://' + mongoHost + '/music');
+  });
+
 
   // load sample data
   for (i = 0; i <= 5; i++) {

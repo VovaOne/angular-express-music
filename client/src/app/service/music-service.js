@@ -11,7 +11,7 @@ function MusicService($http) {
   var self = this;
 
   self.getMusic = function (filter, skip, limit) {
-    return $http.get('http://localhost:3000/music' +
+    return $http.get('/music' +
       '?filter=' + JSON.stringify(filter) +
       '&skip=' + skip +
       '&limit=' + limit)
@@ -22,7 +22,7 @@ function MusicService($http) {
   };
 
   self.getMusicFilters = function () {
-    return $http.get('http://localhost:3000/music/filters')
+    return $http.get('/music/filters')
       .then(response => response.data)
       .catch(e => {
         console.log(e);

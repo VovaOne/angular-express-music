@@ -1,9 +1,12 @@
 *.DS_Store
 
 idea/
+server/idea/
+client/idea/
 
-node_modules/
-dist/
-coverage/
+server/node_modules/
+client/node_modules/
+client/dist/
+
 
 npm-debug*
